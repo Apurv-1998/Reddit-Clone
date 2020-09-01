@@ -1,0 +1,35 @@
+<div class = "row post" *ngFor = "let temp of postDetails">
+
+    <!-- Display Votes: and copying the POST from podt-tile to vote-button   -->
+    <app-vote-button [post] = "temp"></app-vote-button>
+
+    
+    <!--Display Post Information-->
+    <div class = "col-md-11">
+        <span class = "subreddit-info">
+            <span class = "subreddit-text">
+                <!-- @Todo: Add The Router Link -->
+                <a class = "posturl">{{ temp.subredditName }}</a>
+            </span>
+            <span> . Posted by <a class = "username">{{ temp.userName }}</a></span>
+            <span> . {{ temp.duration }}</span>
+        </span>
+        <hr />
+        <div class = "post-title">
+            <a class = "postname" href = "{{ temp.postUrl }}"> {{ temp.postName }}</a>
+        </div>
+        <div>
+            <p class = "post-text">{{ temp.description }}</p>
+        </div>
+        <hr />
+        <a class = "btnComments" role = "button">
+            <!-- @Todo: Add Event Binder-->
+            <fa-icon [icon] = "faComments"></fa-icon>
+              Comments({{ temp.commentCount }})
+        </a>
+        <!-- @Todo: Add Event Binder -->
+        <button class = "login">
+            Read Post
+        </button>
+    </div>
+</div>

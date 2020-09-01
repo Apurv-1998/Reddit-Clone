@@ -1,0 +1,14 @@
+<div class="sidebar-view-subreddit">
+    <div style="color: black; font-weight: bold">Browse Subreddits</div>
+    <hr />
+    <!-- @Todo: Add *ngFor and *nfIf conditions -->
+    <span *ngFor="let temp of subredditResponse">
+        <!-- @Todo: Add Router Link -->
+        <span class="subreddit-text"><a href="">{{ temp.subredditName }}</a></span>
+        <hr />
+    </span>
+    <div style="text-align: center" *ngIf="showDisplayAll">
+        <!-- @Todo: Add Router Link -->
+        <a style="font-weight: bold" >View All</a>
+    </div>
+</div>
