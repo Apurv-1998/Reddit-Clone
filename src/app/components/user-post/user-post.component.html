@@ -1,1 +1,56 @@
-<p>user-post works!</p>
+<div class = "reddit-body">
+    <div class = "container">
+        <div class = "row">
+            <hr/>
+            <div class = "col-md-9">
+                <!-- Display Posts -->
+                <div class = "row post" *ngFor = "let temp of postDetails">
+                    <!-- Display Votes -->
+                    <div class = "col-md-1">
+                        <div class = "d-flex flex-column votebox">
+                            <div class = "p-2">
+                                <!-- @Todo -> Add The EventBinder -->
+                                <fa-icon class = "upvote"></fa-icon>
+                            </div>
+                            <div class = "p-2 votecount">{{ temp.voteCount }}</div>
+                            <div class = "p-2">
+                                 <!-- @Todo -> Add The EventBinder -->
+                                 <fa-icon class = "downvote">Downvote</fa-icon>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Display Post Information-->
+                    <div class = "col-md-11">
+                        <span class = "subreddit-info">
+                            <span class = "subreddit-text">
+                                <!-- @Todo: Add The Router Link -->
+                                <a class = "posturl">{{ temp.subredditName }}</a>
+                            </span>
+                            <span> . Posted by <a class = "username">{{ temp.userName }}</a></span>
+                            <span> . {{ temp.duration }}</span>
+                        </span>
+                        <hr />
+                        <div class = "post-title">
+                            <a class = "postname" href = "{{ temp.postUrl }}"> {{ temp.postName }}</a>
+                        </div>
+                        <div>
+                            <p class = "post-text">{{ temp.description }}</p>
+                        </div>
+                        <hr />
+                        <a class = "btnComments" role = "button">
+                            <!-- @Todo: Add Event Binder-->
+                            <fa-icon [icon] = ""></fa-icon>
+                            {{ temp.commentCount }}
+                        </a>
+                        <!-- @Todo: Add Event Binder -->
+                        <button class = "login">
+                            Read Post
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class = "col-md-3">
+        </div>
+    </div>
+</div>

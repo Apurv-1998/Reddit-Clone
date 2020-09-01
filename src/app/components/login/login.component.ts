@@ -5,6 +5,7 @@ import { LoginService } from 'src/app/services/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { throwError } from 'rxjs';
+import { LoginResponse } from 'src/app/common/login-response';
 
 @Component({
   selector: 'app-login',
@@ -22,6 +23,9 @@ export class LoginComponent implements OnInit {
   //Toaster Messages
   registerSuccessMessage: string;
   isError: boolean;
+
+  //Stroing the Login Response
+  loginResponse: LoginResponse; //Since the return type is AuthenticationRest not List<AuthenticationRest>
 
   constructor(private formBuilder: FormBuilder,
               private loginService: LoginService,
@@ -73,8 +77,9 @@ export class LoginComponent implements OnInit {
     //Subscribing to the data
     this.loginService.loginUser(this.loginUser).subscribe(
       data => {
+        this.loginResponse = data;
         this.isError = false;
-        this.router.navigate(['/showPosts']);
+        this.router.navigate([`/showPosts/${this.loginResponse.userId}`]);
         this.toaster.success('Login Successful');
       }, error => {
         this.isError = true;

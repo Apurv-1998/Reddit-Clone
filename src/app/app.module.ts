@@ -5,7 +5,7 @@ import { Routes,RouterModule } from '@angular/router';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -18,7 +18,7 @@ import { UserPostComponent } from './components/user-post/user-post.component';
 
 const routes: Routes = [
 
-    {path: 'showPosts', component: UserPostComponent},
+    {path: 'showPosts/:userId', component: UserPostComponent},
     {path: 'login', component: LoginComponent},
     {path: 'users/signup', component: SignupComponent}
   
@@ -40,7 +40,8 @@ const routes: Routes = [
     ReactiveFormsModule,
     FormsModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
