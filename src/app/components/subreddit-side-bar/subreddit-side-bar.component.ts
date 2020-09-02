@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SubredditRest } from 'src/app/common/subreddit-rest';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SubredditRestService } from 'src/app/services/subreddit-rest.service';
+import { SideBarComponent } from '../side-bar/side-bar.component';
 
 @Component({
   selector: 'app-subreddit-side-bar',
@@ -19,10 +20,6 @@ export class SubredditSideBarComponent implements OnInit {
 
 
   constructor(private subredditService: SubredditRestService) {
-
-    
-
-
    }
 
 

@@ -16,11 +16,16 @@ import { PostTileComponent } from './components/post-tile/post-tile.component';
 import { VoteButtonComponent } from './components/vote-button/vote-button.component';
 import { SideBarComponent } from './components/side-bar/side-bar.component';
 import { SubredditSideBarComponent } from './components/subreddit-side-bar/subreddit-side-bar.component';
+import { CreatePostComponent } from './components/create-post/create-post.component';
+import { CreateSubredditComponent } from './components/create-subreddit/create-subreddit.component';
+import { ShowSubredditsComponent } from './components/show-subreddits/show-subreddits.component';
 
 
 //Defining the routes
 
 const routes: Routes = [
+    {path: 'createSubreddit/:userId', component: CreateSubredditComponent},
+    {path: 'showAll', component: ShowSubredditsComponent},
     {path: 'showPosts/:userId', component: UserPostComponent},
     {path: 'login', component: LoginComponent},
     {path: 'users/signup', component: SignupComponent}
@@ -38,7 +43,10 @@ const routes: Routes = [
     PostTileComponent,
     VoteButtonComponent,
     SideBarComponent,
-    SubredditSideBarComponent
+    SubredditSideBarComponent,
+    CreatePostComponent,
+    CreateSubredditComponent,
+    ShowSubredditsComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
