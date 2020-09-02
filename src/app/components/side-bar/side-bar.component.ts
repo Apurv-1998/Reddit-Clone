@@ -22,11 +22,20 @@ export class SideBarComponent implements OnInit {
 
   }
 
-  getTheUserId() {
+  getSubredditTheUserId() {
     this.subredditService.getSubredditUserId().subscribe(
       data => {
         this.userIdRest = data;
         this.router.navigate(['/createSubreddit/'+this.userIdRest.userId]);
+      }
+    );
+  }
+
+  getThePostUserId() {
+    this.subredditService.getSubredditUserId().subscribe(
+      data => {
+        this.userIdRest = data;
+        this.router.navigate(['/createPost/'+this.userIdRest.userId]);
       }
     );
   }

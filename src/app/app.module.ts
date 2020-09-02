@@ -6,6 +6,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -24,6 +26,7 @@ import { ShowSubredditsComponent } from './components/show-subreddits/show-subre
 //Defining the routes
 
 const routes: Routes = [
+    {path: 'createPost/:userId', component: CreatePostComponent},
     {path: 'createSubreddit/:userId', component: CreateSubredditComponent},
     {path: 'showAll', component: ShowSubredditsComponent},
     {path: 'showPosts/:userId', component: UserPostComponent},
@@ -56,7 +59,8 @@ const routes: Routes = [
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
-    FontAwesomeModule
+    FontAwesomeModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]
