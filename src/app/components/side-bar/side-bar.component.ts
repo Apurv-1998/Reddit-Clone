@@ -32,12 +32,7 @@ export class SideBarComponent implements OnInit {
   }
 
   getThePostUserId() {
-    this.subredditService.getSubredditUserId().subscribe(
-      data => {
-        this.userIdRest = data;
-        this.router.navigate(['/createPost/'+this.userIdRest.userId]);
-      }
-    );
+    this.router.navigate(['/createPost']);
   }
 
 }

@@ -26,7 +26,7 @@ import { ShowSubredditsComponent } from './components/show-subreddits/show-subre
 //Defining the routes
 
 const routes: Routes = [
-    {path: 'createPost/:userId', component: CreatePostComponent},
+    {path: 'createPost', component: CreatePostComponent},
     {path: 'createSubreddit/:userId', component: CreateSubredditComponent},
     {path: 'showAll', component: ShowSubredditsComponent},
     {path: 'showPosts/:userId', component: UserPostComponent},

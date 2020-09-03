@@ -19,7 +19,7 @@
             <a class = "postname" href = "{{ temp.postUrl }}"> {{ temp.postName }}</a>
         </div>
         <div>
-            <p class = "post-text">{{ temp.description }}</p>
+            <p class = "post-text" [innerHTML] = "temp.description"></p>
         </div>
         <hr />
         <a class = "btnComments" role = "button">
