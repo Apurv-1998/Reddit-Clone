@@ -12,6 +12,10 @@ export class LoginService {
 
   baseUrl: string = 'http://localhost:8080/reddit-clone-app/api';
 
+  isLoggedIn: boolean = false;
+
+  userName: string;
+
   constructor(private httpClient: HttpClient) { }
 
   loginUser(loginPayload: Login): Observable<any>{
@@ -21,4 +25,23 @@ export class LoginService {
     return this.httpClient.post<LoginResponse>(searchUrl,loginPayload);
 
   }
+
+  setLogin(logIn: boolean){
+    this.isLoggedIn = logIn;
+  }
+
+  getLogin(): boolean {
+    return this.isLoggedIn;
+  }
+
+  
+  setUsername(userName: string){
+    this.userName = userName;
+  }
+
+  getUsername(): string{
+    return this.userName;
+  }
+
+
 }

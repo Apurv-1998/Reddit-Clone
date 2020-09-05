@@ -63,4 +63,10 @@ export class PostTileComponent implements OnInit {
 
   }
 
+  viewPost(postId: string) {
+
+    this.router.navigate(['/viewPosts/'+postId]);
+
+  }
+
 }

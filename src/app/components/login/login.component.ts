@@ -79,13 +79,17 @@ export class LoginComponent implements OnInit {
       data => {
         this.loginResponse = data;
         this.isError = false;
+        this.loginService.setLogin(true);
+        this.loginService.setUsername(this.loginResponse.userName);
         this.router.navigate([`/showPosts/${this.loginResponse.userId}`]);
         this.toaster.success('Login Successful');
       }, error => {
         this.isError = true;
+        this.loginService.setLogin(false);
         throwError(error);
       }
     );
+
 
   }
 

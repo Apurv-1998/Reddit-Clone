@@ -9,4 +9,5 @@ export class Post {
     subredditName: string;
     userName: string;
     commentCount: number;
+    userId: string;
 }

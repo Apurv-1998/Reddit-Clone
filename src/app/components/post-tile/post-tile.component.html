@@ -16,7 +16,8 @@
         </span>
         <hr />
         <div class = "post-title">
-            <a class = "postname" href = "{{ temp.postUrl }}"> {{ temp.postName }}</a>
+            <!-- Add Router Link -->
+            <a class = "postname" routerLink = "/viewPosts/{{temp.postId}}"> {{ temp.postName }}</a>
         </div>
         <div>
             <p class = "post-text" [innerHTML] = "temp.description"></p>
@@ -28,7 +29,7 @@
               Comments({{ temp.commentCount }})
         </a>
         <!-- @Todo: Add Event Binder -->
-        <button class = "login">
+        <button class = "login" (click) = "viewPost(temp.postId)">
             Read Post
         </button>
     </div>

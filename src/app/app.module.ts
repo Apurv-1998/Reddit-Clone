@@ -7,7 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { EditorModule } from '@tinymce/tinymce-angular';
-
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -21,11 +21,13 @@ import { SubredditSideBarComponent } from './components/subreddit-side-bar/subre
 import { CreatePostComponent } from './components/create-post/create-post.component';
 import { CreateSubredditComponent } from './components/create-subreddit/create-subreddit.component';
 import { ShowSubredditsComponent } from './components/show-subreddits/show-subreddits.component';
+import { ViewPostComponent } from './components/view-post/view-post.component';
 
 
 //Defining the routes
 
 const routes: Routes = [
+    {path: 'viewPosts/:postId', component: ViewPostComponent},
     {path: 'createPost', component: CreatePostComponent},
     {path: 'createSubreddit/:userId', component: CreateSubredditComponent},
     {path: 'showAll', component: ShowSubredditsComponent},
@@ -49,7 +51,8 @@ const routes: Routes = [
     SubredditSideBarComponent,
     CreatePostComponent,
     CreateSubredditComponent,
-    ShowSubredditsComponent
+    ShowSubredditsComponent,
+    ViewPostComponent
   ],
   imports: [
     RouterModule.forRoot(routes),
@@ -60,7 +63,8 @@ const routes: Routes = [
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     FontAwesomeModule,
-    EditorModule
+    EditorModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -28,4 +28,12 @@ export class PostService {
     return this.httpClient.post(searchUrl,createPostpayload);
 
   }
+
+  getSpecificPostDetails(postId: string): Observable<any>{
+
+    const searchUrl = `${this.baseUrl}/posts/${postId}/displayPost`;
+
+    return this.httpClient.get<Post>(searchUrl);
+
+  }
 }
